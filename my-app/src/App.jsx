@@ -1,28 +1,27 @@
-import { Routes, Route ,Navigate} from "react-router-dom";
-import Register from "./component/register";
-import Login from "./component/login";
-import Page from "./page";
-import PrivateRoute  from "./component/PrivateRoute";
-
+// App.js
+import React, { useState } from 'react';
+import Navbar from './component/Navbar';
+import HeroSection from './component/HeroSection';
+import RoomsSection from './component/RoomSection';
+import AmenitiesSection from './component/Aminities';
+import DiningSection from './component/Dining';
+import ContactSection from './component/Contact';
+import Footer  from "./component/Footer"
 
 function App() {
+
+
   return (
-    <>
-    <Routes>
-    
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Navigate to="/login" />} />
-         {/* Protected Routes */}
-        <Route path="/dashboard" element={
-          <PrivateRoute>
-            <Page/>
-          </PrivateRoute>
-        } />
-    </Routes>
-    </>
+    <div className="min-h-screen bg-gray-50">
+    <Navbar/>
+      <HeroSection />
+      <RoomsSection/>
+      <AmenitiesSection/>
+      <DiningSection/>
+      <ContactSection/>
+      <Footer/>
+    </div>
   );
 }
 
 export default App;
-
